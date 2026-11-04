@@ -1,0 +1,133 @@
+:root {
+  /* Landing Page Design & Tailwind Spacing Scale (B2) */
+  --spacing-0: 0px;
+  --spacing-25: 2px;
+  --spacing-50: 4px;
+  --spacing-75: 8px;
+  --spacing-100: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 64px;
+  --spacing-800: 80px;
+  --spacing-900: 96px;
+  --spacing-950: 128px;
+  --spacing-1000: 144px;
+
+  /* Shared Hallmark spacing aliases mapped to strict scale */
+  --space-3xs: var(--spacing-25);
+  --space-2xs: var(--spacing-50);
+  --space-xs: var(--spacing-75);
+  --space-sm: var(--spacing-100);
+  --space-md: var(--spacing-200);
+  --space-lg: var(--spacing-300);
+  --space-xl: var(--spacing-500);
+  --space-2xl: var(--spacing-700);
+  --space-3xl: var(--spacing-900);
+  --space-4xl: var(--spacing-1000);
+
+  /* Landing Page Design Tailwind Type Scale (B1) */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+
+  /* Motion: Weighted Deceleration Base Curve (B7) */
+  --ease-base: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-micro: 120ms;
+  --dur-hover: 300ms;
+  --dur-layout: 500ms;
+  --dur-reveal: 700ms;
+
+  --color-error: oklch(52% 0.19 27);
+  --color-success: oklch(50% 0.12 150);
+
+  --container: 1360px;
+  --gutter: 48px;
+  --gap-columns: 24px;
+  --section-gap-s: 80px;
+  --section-gap: 96px;
+  --section-gap-l: 120px;
+
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  /* Flat Dark Mode Surfaces (B4) mapped to OKLCH with minimum 0.005 chroma */
+  --color-paper: oklch(14% 0.006 240);          /* #121214 deep flat ground */
+  --color-paper-2: oklch(18% 0.007 240);        /* #181818 surface */
+  --color-paper-3: oklch(21% 0.007 240);        /* #1F1F1F elevated surface */
+  --color-paper-elevated: oklch(24% 0.008 240); /* #272727 highlight surface */
+  --color-nav-bg: oklch(16% 0.006 240 / 0.85);
+
+  --color-paper-light: oklch(98% 0.005 240);
+  --color-paper-light-2: oklch(95% 0.008 240);
+
+  /* Typography Inks */
+  --color-ink: oklch(99% 0.006 240);            /* #FFFFFF crisp text */
+  --color-ink-2: oklch(90% 0.012 240);
+  --color-muted: oklch(76% 0.018 240);          /* Muted body text */
+  --color-subtle: oklch(62% 0.015 240);         /* Deactivated words in reveal */
+
+  --color-ink-on-light: oklch(20% 0.03 240);
+  --color-ink-on-light-2: oklch(36% 0.02 240);
+  --color-muted-on-light: oklch(52% 0.02 240);
+
+  /* Hairlines and Borders (B4: full borders only) */
+  --color-rule: oklch(95% 0.01 240 / 0.12);
+  --color-rule-2: oklch(95% 0.01 240 / 0.24);
+  --color-rule-light: oklch(20% 0.04 250 / 0.12);
+
+  /* Accent & Action (B1 text styles: Button-md) */
+  --color-accent: oklch(48% 0.22 250);          /* Vibrant cobalt with 4.5:1+ contrast against white text */
+  --color-accent-hover: oklch(54% 0.23 250);
+  --color-accent-ink: oklch(99% 0.006 240);
+  --color-focus: oklch(72% 0.19 250);
+
+  /* Hero Heading Left-to-Right Text Gradient (B5) */
+  --hero-gradient-start: oklch(99% 0.006 240);  /* #FFFFFF */
+  --hero-gradient-end: oklch(68% 0.010 240);    /* #9B9B9B */
+
+  --hero-scrim-top: oklch(14% 0.006 240 / 0.88);
+  --hero-scrim-mid: oklch(14% 0.006 240 / 0.72);
+  --hero-scrim-bottom: oklch(14% 0.006 240 / 0.98);
+  --shadow-media: 0 16px 36px oklch(10% 0.02 240 / 0.18);
+
+  /* Approved Single Typeface: Manrope (B1) */
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  /* Nested Corner Radius Formula (B3: inner = outer - gap) */
+  --radius-card: 16px;                          /* Outer shape radius */
+  --card-padding: 24px;                         /* Gap / padding */
+  --radius-inner: 8px;                          /* Inner shape radius: 16 - 8 = 8px */
+  --radius-sm: 4px;
+  --radius-pill: 999px;
+
+  --rule-hair: 1px;
+  --rule-thick: 2px;
+  --shadow-card: 0 16px 32px oklch(10% 0.02 240 / 0.25);
+  --shadow-dock: 0 24px 48px oklch(10% 0.02 240 / 0.35);
+  --tracking-display: -0.02em;
+}
