@@ -15,6 +15,7 @@
   --spacing-900: 96px;
   --spacing-950: 128px;
   --spacing-1000: 144px;
+  --spacing-1050: 160px;
 
   /* Shared Hallmark spacing aliases mapped to strict scale */
   --space-3xs: var(--spacing-25);
@@ -75,9 +76,9 @@
 
   /* Flat Dark Mode Surfaces (B4) mapped to OKLCH with minimum 0.005 chroma */
   --color-paper: oklch(14% 0.006 240);          /* #121214 deep flat ground */
-  --color-paper-2: oklch(18% 0.007 240);        /* #181818 surface */
-  --color-paper-3: oklch(21% 0.007 240);        /* #1F1F1F elevated surface */
-  --color-paper-elevated: oklch(24% 0.008 240); /* #272727 highlight surface */
+  --color-paper-2: oklch(18% 0.012 245);        /* subtle navy-charcoal surface */
+  --color-paper-3: oklch(21% 0.015 245);        /* elevated card surface */
+  --color-paper-elevated: oklch(24% 0.06 250);  /* deep prussian navy center console */
   --color-nav-bg: oklch(16% 0.006 240 / 0.85);
 
   --color-paper-light: oklch(98% 0.005 240);
