@@ -1,4 +1,4 @@
-/* Hallmark · shape: Dock · genre: atmospheric · theme: custom · job: sign up · idea: "1:1 replica of NextState landing page concept for Roshani Enterprises Goa" · vibe: "coastal concrete engineering civil precision infrastructure"
+/* Hallmark · shape: Dock · genre: atmospheric · theme: custom · job: sign up · copy: verbatim · idea: "1:1 replica of NextState luxury real estate landing page concept for Roshani Enterprises Goa" · vibe: "coastal luxury real estate architectural estates"
  * paper: oklch(14% 0.012 245) · accent: oklch(34% 0.025 240) · display: Manrope · body: Manrope · hero: giant rounded container with uppercase display title, play video pill, avatar stack, and rotating circular stamp · nav: floating pill header with dropdown and direct arrow · footer: clean light two-column register with search pill and social links · imagery: photographs · signature: rotating circular stamp badge, consultant cutout overlap, and active dark product card
  * axes: dark/geometric-sans/chromatic-blue · posture: drenched · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 · weakest: S, rotating circular stamp badge with deceleration curve */
@@ -481,6 +481,25 @@
 .about-section {
   padding-block: var(--section-gap);
   background-color: var(--color-page-bg);
+}
+
+.section-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-75);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-ink);
+  background-color: var(--color-card-white);
+  border: var(--rule-hair) solid var(--color-card-border);
+  padding: var(--spacing-50) var(--spacing-100);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-bottom: var(--spacing-200);
+}
+
+.section-tag-pill svg {
+  color: var(--color-ink);
 }
 
 .about-header-block {
@@ -1170,6 +1189,12 @@
 
 .footer-brand-header .brand-title {
   color: var(--color-ink);
+}
+
+.footer-agency-tagline {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-ink-2);
 }
 
 .footer-address {

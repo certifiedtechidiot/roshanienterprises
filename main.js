@@ -1,10 +1,9 @@
 /**
- * Roshani Enterprises Goa - Interactive Features & Motion Logic
- * Built adhering to Hallmark, Silk-Design, and Landing Page Design standards.
+ * Roshani Enterprises Goa - Interactive Features & Real Estate Modals
+ * 1:1 replica functionality matching Pinterest NextState concept.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  initTaglineReveal();
   initModalsAndDrawers();
   initDropdownMenu();
   initMobileNav();
@@ -12,43 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================================
-   01. MANDATORY B11 TAGLINE REVEAL (Scroll-Triggered Word Illumination)
-   ========================================================================== */
-
-function initTaglineReveal() {
-  const revealWords = document.querySelectorAll(".reveal-word");
-  if (!revealWords.length) return;
-
-  // Reduced motion check (Silk-Design & Hallmark)
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    revealWords.forEach((word) => word.classList.add("active"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          revealWords.forEach((word, index) => {
-            setTimeout(() => {
-              word.classList.add("active");
-            }, index * 45); // Staggered illumination
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.35 }
-  );
-
-  const taglineSection = document.querySelector(".tagline-reveal-section");
-  if (taglineSection) {
-    observer.observe(taglineSection);
-  }
-}
-
-/* ==========================================================================
-   02. DROPDOWN MENU
+   01. DROPDOWN MENU
    ========================================================================== */
 
 function initDropdownMenu() {
@@ -80,58 +43,54 @@ function initDropdownMenu() {
 }
 
 /* ==========================================================================
-   03. MODALS & DRAWERS (Accessible Dialogs & Focus Traps)
+   02. PROPERTY DATA & SPECIFICATION DRAWER
    ========================================================================== */
 
-const productData = {
-  pavers: {
-    title: "Interlocking Paver Blocks (Heavy-Duty)",
+const propertyData = {
+  harmony_haven: {
+    title: "Harmony Haven",
+    subtitle: "Serene Valley, Goa",
     specs: [
-      { label: "Standard", val: "IS 15658:2006 Certified" },
-      { label: "Concrete Grade", val: "M30, M40, M50 Hydraulic Compacted" },
-      { label: "Available Thickness", val: "60mm (Light), 80mm (Heavy Axle), 100mm (Industrial Port)" },
-      { label: "Shapes / Profiles", val: "Yellow Milano, Cosmic, Fan Blade, I-Shape, Hexagonal" },
-      { label: "Finish Options", val: "Shot-Blasted, Anti-Skid Chequered, Gloss Top Coat" },
-      { label: "Compressive Strength", val: "40 N/mm² to 55 N/mm²" },
-      { label: "Abrasion Resistance", val: "Under 2.0 mm loss (Heavy Freight Grade)" },
-      { label: "Yard Location", val: "Sancoale Industrial Area, South Goa" }
+      { label: "Location", val: "Serene Valley, Goa" },
+      { label: "Size", val: "3 Bedrooms, 1.5 Bathrooms | 1,200 sq. ft." },
+      { label: "Total Area", val: "1,500 sq. ft. Built-up" },
+      { label: "Year Finished", val: "2024" },
+      { label: "Property Type", val: "Luxury Designer Villa" },
+      { label: "Furnishing", val: "Fully Furnished / Turnkey" },
+      { label: "Views", val: "Breathtaking Valley & Forest Canopy" },
+      { label: "Status", val: "Ready to Move In" }
     ],
-    description: "Hydraulically vibrated precast paver blocks manufactured with clean graded river sand and 53-grade OPC cement. Engineered specifically to eliminate water pooling and withstand continuous coastal monsoon saturation without shifting or cracking."
+    description: "Harmony Haven, a serene 3-bed, 2-bath retreat in Goa. Spanning 1,500 sq. ft., this property offers modern luxury in a tranquil setting. With breathtaking views and meticulous design, it's your haven of comfort and style. Discover a harmonious living experience at Harmony Haven."
   },
-  walls: {
-    title: "Precast Reinforced Boundary & Compound Walls",
+  blissful_gardens: {
+    title: "Blissful Gardens",
+    subtitle: "Assagao, North Goa",
     specs: [
-      { label: "Design Code", val: "IS 456:2000 & IS 13920 (Seismic/Wind Resistant)" },
-      { label: "Concrete Mix", val: "M30 Design Mix with Fe500D TMT Reinforcement" },
-      { label: "Column Heights", val: "6 ft, 7 ft, 8 ft, and 10 ft above ground" },
-      { label: "Panel Dimensions", val: "7 ft (2.1m) length x 1 ft (0.3m) height x 50mm thickness" },
-      { label: "Installation Speed", val: "Up to 150 running meters per day with 4-person crew" },
-      { label: "Curing Method", val: "Steam cured and immersion water tanks" },
-      { label: "Coastal Resilience", val: "Anti-corrosion coating on internal steel rebars" }
+      { label: "Location", val: "Assagao, North Goa" },
+      { label: "Size", val: "4 Bedrooms, 3 Bathrooms | 2,400 sq. ft." },
+      { label: "Plot Area", val: "450 sq. meters" },
+      { label: "Year Finished", val: "2024" },
+      { label: "Property Type", val: "Contemporary Gabled Villa" },
+      { label: "Outdoor Features", val: "Private Manicured Lawn, Sun Terrace, Alfresco Patio" },
+      { label: "Parking", val: "Covered 2-Car Port" },
+      { label: "Status", val: "Available for Immediate Ownership" }
     ],
-    description: "Readymade compound wall system designed for swift site deployment across Goa. Eliminates messy onsite brickwork, plastering delays, and monsoon mortar washout while reducing perimeter fencing costs by up to 40%."
+    description: "Blissful Gardens features striking pitched gables, double-height living spaces, and expansive floor-to-ceiling glass fenestrations overlooking private lawns. Designed for refined indoor-outdoor Goan living."
   },
-  manholes: {
-    title: "Heavy-Duty RCC Manhole Covers & Drainage",
+  tranquil_heights: {
+    title: "Tranquil Heights",
+    subtitle: "Dona Paula, Goa",
     specs: [
-      { label: "Classification", val: "IS 12592:2002 Heavy Duty (HD 20T) & Extra Heavy (EHD 35T)" },
-      { label: "Reinforcement", val: "Hot-dip galvanized heavy TMT cage with structural steel rim" },
-      { label: "Shapes Available", val: "Circular (560mm, 600mm dia), Rectangular, Square (450mm to 900mm)" },
-      { label: "Lifting System", val: "Recessed stainless steel lifting eyes / key slots" },
-      { label: "Load Capacity", val: "Tested to 200 kN (HD) and 350 kN (EHD) hydraulic crush load" },
-      { label: "Application", val: "Mormugao Port freight access, highway stormwater drainage, industrial estates" }
+      { label: "Location", val: "Dona Paula, Goa" },
+      { label: "Size", val: "5 Bedrooms, 4.5 Bathrooms | 3,800 sq. ft." },
+      { label: "Plot Area", val: "680 sq. meters" },
+      { label: "Year Finished", val: "2024" },
+      { label: "Property Type", val: "Sunset Horizon Architectural Estate" },
+      { label: "Features", val: "Infinity Plunge Pool, Double Garage, Twilight Observation Deck" },
+      { label: "Security", val: "Gated Enclave with 24/7 Access Control" },
+      { label: "Status", val: "Exclusive Listing with Roshani Enterprises" }
     ],
-    description: "High-density reinforced precast manhole covers with interlocking frames. Immune to scrap metal theft, corrosion-proof in salty coastal soil, and approved by Goa municipal civil contractors."
-  },
-  jalis: {
-    title: "Designer Cement Jalis & Architectural Grills",
-    specs: [
-      { label: "Applications", val: "Breezeway facades, compound wall inserts, balcony partitions" },
-      { label: "Thickness", val: "40mm to 65mm high-density micro-concrete" },
-      { label: "Patterns", val: "Geometric Moroccan, Classic Floral, Horizontal Louver" },
-      { label: "Durability", val: "Fiber-reinforced to resist wind-driven coastal salt spray" }
-    ],
-    description: "Architectural decorative cement jalis providing natural cross-ventilation while providing perimeter security and sun shading for contemporary Goan architecture."
+    description: "Tranquil Heights stands as a premier architectural landmark overlooking sunset sea horizons. Built with fine stone masonry, custom millwork, ambient architectural evening lighting, and expansive landscaped grounds."
   }
 };
 
@@ -156,19 +115,9 @@ function initModalsAndDrawers() {
     });
   }
 
-  // Quote Modal
+  // Quote Modal Close
   const quoteModal = document.getElementById("quote-modal");
   const quoteModalClose = document.getElementById("quote-modal-close");
-  const triggerIds = ["header-contact-btn", "header-arrow-btn", "inquiry-cta-btn", "showcase-contact-btn", "mobile-quote-btn"];
-
-  triggerIds.forEach((id) => {
-    const el = document.getElementById(id);
-    if (el && quoteModal) {
-      el.addEventListener("click", () => {
-        openContactModal();
-      });
-    }
-  });
 
   if (quoteModalClose && quoteModal) {
     quoteModalClose.addEventListener("click", () => {
@@ -195,16 +144,16 @@ function initModalsAndDrawers() {
   }
 }
 
-window.openContactModal = function(productName) {
+window.openContactModal = function(propertyName) {
   const quoteModal = document.getElementById("quote-modal");
   if (!quoteModal) return;
   
-  if (productName) {
+  if (propertyName) {
     const select = document.getElementById("quote-product");
     if (select) {
       for (let i = 0; i < select.options.length; i++) {
-        if (select.options[i].text.toLowerCase().includes(productName.toLowerCase()) || 
-            select.options[i].value.toLowerCase().includes(productName.toLowerCase())) {
+        if (select.options[i].text.toLowerCase().includes(propertyName.toLowerCase()) || 
+            select.options[i].value.toLowerCase().includes(propertyName.toLowerCase())) {
           select.selectedIndex = i;
           break;
         }
@@ -215,13 +164,13 @@ window.openContactModal = function(productName) {
   quoteModal.showModal();
 };
 
-window.openDrawer = function(productKey) {
+window.openDrawer = function(propertyKey) {
   const drawer = document.getElementById("product-drawer");
   const content = document.getElementById("drawer-content");
   const title = document.getElementById("drawer-title");
   if (!drawer || !content || !title) return;
 
-  const data = productData[productKey] || productData.pavers;
+  const data = propertyData[propertyKey] || propertyData.harmony_haven;
   title.textContent = data.title;
 
   let tableHtml = `<table class="drawer-spec-table"><tbody>`;
@@ -235,7 +184,7 @@ window.openDrawer = function(productKey) {
     ${tableHtml}
     <div style="margin-top: var(--spacing-400);">
       <button type="button" class="btn btn-pill-about" style="width: 100%; justify-content: center;" onclick="closeDrawer(); openContactModal('${data.title}')">
-        Request Price For This Product
+        Schedule Private Viewing
       </button>
     </div>
   `;
@@ -254,7 +203,7 @@ window.closeDrawer = function() {
 };
 
 /* ==========================================================================
-   04. MOBILE NAVIGATION
+   03. MOBILE NAVIGATION
    ========================================================================== */
 
 function initMobileNav() {
@@ -289,7 +238,7 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   05. FORM HANDLERS (Realistic, Accessible, No-Alert)
+   04. FORM HANDLERS (Accessible, Client-Side Feedback)
    ========================================================================== */
 
 function initForms() {
@@ -301,20 +250,20 @@ function initForms() {
       e.preventDefault();
       const emailInput = document.getElementById("newsletter-email");
       if (!emailInput || !emailInput.value.includes("@")) {
-        newsletterFeedback.textContent = "Please enter a valid business email address.";
+        newsletterFeedback.textContent = "Please enter a valid email address.";
         newsletterFeedback.style.color = "var(--color-error)";
         newsletterFeedback.hidden = false;
         return;
       }
 
-      newsletterFeedback.textContent = `Subscribed. Monthly precast mix designs and Goa yard pricing will be sent to ${emailInput.value}.`;
+      newsletterFeedback.textContent = `Thank you for subscribing! Exclusive property portfolios will be delivered to ${emailInput.value}.`;
       newsletterFeedback.style.color = "var(--color-ink)";
       newsletterFeedback.hidden = false;
       emailInput.value = "";
     });
   }
 
-  // Quote Modal Form
+  // Quote / Inquiry Modal Form
   const quoteForm = document.getElementById("quote-modal-form");
   const quoteFeedback = document.getElementById("quote-feedback");
   if (quoteForm && quoteFeedback) {
@@ -331,7 +280,7 @@ function initForms() {
         return;
       }
 
-      quoteFeedback.textContent = `Thank you, ${name}. Our Sancoale engineering desk has received your inquiry for ${product} and will call ${phone} within 2 hours.`;
+      quoteFeedback.textContent = `Thank you, ${name}. Our Roshani Enterprises real estate advisory team has received your request regarding ${product} and will contact you at ${phone} promptly.`;
       quoteFeedback.style.color = "var(--color-success)";
       quoteFeedback.hidden = false;
       quoteForm.reset();
@@ -349,13 +298,13 @@ function initForms() {
   if (searchForm) {
     searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const query = document.getElementById("footer-search-input").value.toLowerCase();
-      if (query.includes("wall") || query.includes("boundary") || query.includes("fence")) {
-        openDrawer("walls");
-      } else if (query.includes("manhole") || query.includes("drain") || query.includes("cover")) {
-        openDrawer("manholes");
+      const query = (document.getElementById("footer-search-input").value || "").toLowerCase();
+      if (query.includes("blissful") || query.includes("garden") || query.includes("assagao")) {
+        openDrawer("blissful_gardens");
+      } else if (query.includes("tranquil") || query.includes("heights") || query.includes("dona paula")) {
+        openDrawer("tranquil_heights");
       } else {
-        openDrawer("pavers");
+        openDrawer("harmony_haven");
       }
     });
   }
