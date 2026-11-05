@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roshani Enterprises Goa: Coastal Precast Concrete and Infrastructure</title>
-  <meta name="description" content="Roshani Enterprises manufactures coastal grade precast concrete, interlocking paver blocks, RCC manhole covers, and precast compound walls in South Goa.">
+  <meta name="description" content="Roshani Enterprises manufactures coastal-grade precast concrete, interlocking paver blocks, RCC manhole covers, and precast compound walls in Sancoale, South Goa.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,6 +18,28 @@
   <!-- Floating Navigation Bar -->
   <header class="site-header">
     <div class="header-container">
+      <nav class="nav-left" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-link nav-dropdown-btn" id="products-menu-btn" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="dropdown-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="products-dropdown" hidden>
+              <a href="#products" class="dropdown-item" onclick="openDrawer('pavers')">Interlocking paver blocks</a>
+              <a href="#products" class="dropdown-item" onclick="openDrawer('walls')">Precast compound walls</a>
+              <a href="#products" class="dropdown-item" onclick="openDrawer('manholes')">RCC heavy duty manholes</a>
+              <a href="#products" class="dropdown-item" onclick="openDrawer('jalis')">Designer cement jalis</a>
+            </div>
+          </li>
+          <li><a href="#about" class="nav-link">About facility</a></li>
+          <li><a href="#inquiry" class="nav-link">Goa projects</a></li>
+        </ul>
+      </nav>
+
       <a href="#hero" class="brand-link" aria-label="Roshani Enterprises Goa home">
         <svg class="brand-symbol" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M16 2L2 9V23L16 30L30 23V9L16 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -26,18 +48,16 @@
         <span class="brand-title">Roshani Enterprises</span>
       </a>
 
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#benefits" class="nav-link">Benefits</a></li>
-          <li><a href="#products" class="nav-link">Products</a></li>
-          <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#faq" class="nav-link">FAQ</a></li>
-        </ul>
-      </nav>
-
       <div class="header-actions">
-        <a href="#contact" class="btn btn-primary nav-cta">Request quote</a>
+        <button type="button" class="btn btn-pill-contact" id="header-contact-btn">
+          <span>Contact us</span>
+        </button>
+        <button type="button" class="circle-arrow-btn header-arrow-btn" id="header-arrow-btn" aria-label="Open contact form">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
         <button type="button" class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-panel">
           <span class="menu-line menu-line-1" aria-hidden="true"></span>
           <span class="menu-line menu-line-2" aria-hidden="true"></span>
@@ -46,7 +66,7 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Overlay Drawer (Landing Page Design B7) -->
+  <!-- Mobile Navigation Overlay Drawer -->
   <div id="mobile-nav-panel" class="mobile-nav-panel" aria-hidden="true" hidden>
     <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
     <div class="mobile-nav-container">
@@ -69,183 +89,310 @@
       <nav class="mobile-nav-menu" aria-label="Mobile navigation">
         <ul class="mobile-nav-list">
           <li class="mobile-nav-item"><a href="#hero" class="mobile-nav-link">Home</a></li>
-          <li class="mobile-nav-item"><a href="#expertise" class="mobile-nav-link">About facility</a></li>
-          <li class="mobile-nav-item"><a href="#benefits" class="mobile-nav-link">Site advantages</a></li>
-          <li class="mobile-nav-item"><a href="#products" class="mobile-nav-link">Precast systems</a></li>
-          <li class="mobile-nav-item"><a href="#process" class="mobile-nav-link">Workflow</a></li>
-          <li class="mobile-nav-item"><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+          <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About facility</a></li>
+          <li class="mobile-nav-item"><a href="#inquiry" class="mobile-nav-link">Direct inquiry</a></li>
+          <li class="mobile-nav-item"><a href="#products" class="mobile-nav-link">Precast products</a></li>
+          <li class="mobile-nav-item"><a href="#newsletter" class="mobile-nav-link">Technical bulletins</a></li>
         </ul>
       </nav>
 
       <div class="mobile-nav-actions">
-        <a href="#contact" class="btn btn-primary mobile-cta-btn">Request factory quote</a>
-        <a href="tel:+919876543210" class="btn btn-secondary mobile-phone-btn">
+        <button type="button" class="btn btn-primary mobile-cta-btn" id="mobile-quote-btn">Request factory quote</button>
+        <a href="tel:+919822154321" class="btn btn-secondary mobile-phone-btn">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          Call +91 98765 43210
+          Call Sancoale yard
         </a>
-      </div>
-
-      <div class="mobile-nav-footer">
-        <p class="mobile-nav-note">Sancoale, South Goa.</p>
       </div>
     </div>
   </div>
 
   <main id="main-content">
 
-    <!-- Hero Section (Above the Fold) -->
+    <!-- HERO SECTION (Pinterest 1:1 Replica) -->
     <section id="hero" class="hero-stage" aria-labelledby="hero-heading">
-      <div class="hero-backdrop" data-slot="hero-backdrop" data-alt="Modern architectural civil infrastructure skyline at dusk in deep blue light">
-        <img class="hero-backdrop-img" src="./assets/hero-skyline.jpg" alt="Modern architectural civil infrastructure skyline at dusk in deep blue light">
-        <div class="hero-scrim"></div>
-      </div>
+      <div class="container hero-container">
+        
+        <!-- Big Bold Display Typography (Real nouns, no empty buzzwords) -->
+        <h1 id="hero-heading" class="hero-display-title">
+          BUILDING COASTAL<br>
+          FOUNDATIONS WITH<br>
+          ENGINEERED PRECAST
+        </h1>
 
-      <div class="container hero-content">
-        <h1 id="hero-heading" class="hero-title">Precast concrete for coastal Goa</h1>
-        <p class="hero-tagline">Interlocking pavers, compound walls, and civil drainage.</p>
-
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Request factory quote</a>
-          <a href="#products" class="btn btn-secondary">Explore products</a>
-        </div>
-
-        <p class="hero-proof-line">
-          Operating in Sancoale since 2014. Supplying contractors across Goa.
-        </p>
-      </div>
-
-      <!-- Docked Three-Panel Console -->
-      <div class="container hero-dock" id="expertise">
-        <div class="dock-grid">
-
-          <!-- Dock Panel 1: About Us -->
-          <article class="dock-card" aria-labelledby="dock-about-title">
-            <h2 id="dock-about-title" class="dock-card-title">About facility</h2>
-            <p class="dock-card-text">
-              Manufacturing in Sancoale since 2014, engineered for coastal humidity.
+        <!-- Hero Split Content Grid -->
+        <div class="hero-content-grid">
+          
+          <!-- Left Column: Copy, Play Video Button & Avatar Stack -->
+          <div class="hero-left-column">
+            <p class="hero-description">
+              Direct supply of certified precast concrete and pavers across Goa’s coastal corridor.
             </p>
-            <div class="dock-image-frame" data-slot="dock-about-image" data-alt="Roshani Enterprises precast concrete manufacturing facility at dusk">
-              <img src="./assets/about-facility.jpg" alt="Roshani Enterprises precast concrete manufacturing facility at dusk">
+
+            <div class="hero-action-row">
+              <button type="button" class="btn-play-video" id="play-video-btn" aria-label="Play Goa precast yard tour video">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+                <span class="play-btn-text">Play videos</span>
+              </button>
             </div>
-          </article>
 
-          <!-- Dock Panel 2: Core Expertise (Elevated Center) -->
-          <article class="dock-card dock-card-elevated" aria-labelledby="dock-expertise-title">
-            <h2 id="dock-expertise-title" class="dock-card-title">Core engineering</h2>
-            <div class="expertise-grid">
-
-              <div class="expertise-item">
-                <div class="expertise-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                  </svg>
-                </div>
-                <h3 class="expertise-name">Dense mixes</h3>
-                <p class="expertise-desc">M30 to M50 mixes.</p>
+            <!-- Avatar Stack with Experience Proof -->
+            <div class="hero-avatar-stack">
+              <div class="avatar-group" aria-hidden="true">
+                <img src="./assets/avatar-1.jpg" alt="Civil contractor client" class="avatar-img" width="40" height="40">
+                <img src="./assets/avatar-2.jpg" alt="Commercial developer client" class="avatar-img" width="40" height="40">
+                <img src="./assets/avatar-3.jpg" alt="Landscape architect client" class="avatar-img" width="40" height="40">
+                <img src="./assets/avatar-4.jpg" alt="Municipal project engineer" class="avatar-img" width="40" height="40">
+                <img src="./assets/avatar-5.jpg" alt="Industrial estate contractor" class="avatar-img" width="40" height="40">
               </div>
-
-              <div class="expertise-item">
-                <div class="expertise-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
-                    <polyline points="10 9 9 9 8 9"/>
-                  </svg>
-                </div>
-                <h3 class="expertise-name">Steam curing</h3>
-                <p class="expertise-desc">Hydraulic vibration.</p>
+              <div class="avatar-text-block">
+                <span class="avatar-stat-number num">12+ years</span>
+                <span class="avatar-stat-label">satisfied clients in Goa</span>
               </div>
-
-              <div class="expertise-item">
-                <div class="expertise-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="20" x2="18" y2="10"/>
-                    <line x1="12" y1="20" x2="12" y2="4"/>
-                    <line x1="6" y1="20" x2="6" y2="14"/>
-                    <path d="M4 20h16"/>
-                  </svg>
-                </div>
-                <h3 class="expertise-name">Permeable pavers</h3>
-                <p class="expertise-desc">Groundwater recharge.</p>
-              </div>
-
-              <div class="expertise-item">
-                <div class="expertise-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
-                    <line x1="12" y1="22" x2="12" y2="15.5"/>
-                    <polyline points="22 8.5 12 15.5 2 8.5"/>
-                  </svg>
-                </div>
-                <h3 class="expertise-name">Boundary walls</h3>
-                <p class="expertise-desc">Reinforced panels.</p>
-              </div>
-
             </div>
-          </article>
+          </div>
 
-          <!-- Dock Panel 3: Key Deployments -->
-          <article class="dock-card" id="projects" aria-labelledby="dock-projects-title">
-            <h2 id="dock-projects-title" class="dock-card-title">Goa projects</h2>
-            <div class="projects-stack">
-
-              <div class="project-preview">
-                <div class="project-thumbnail" data-slot="project-tower" data-alt="Paved container freight hardstand in Goa port corridor">
-                  <img src="./assets/project-tower.jpg" alt="Paved container freight hardstand in Goa port corridor">
+          <!-- Right Column: Hero Architecture Visual with Rotating Badge & Floating Pill -->
+          <div class="hero-right-column">
+            <div class="hero-image-wrapper">
+              <img src="./assets/hero-villa.jpg" alt="Modern coastal architectural villa with heavy-duty interlocking precast paver courtyard in Goa" class="hero-featured-image" width="1376" height="768">
+              
+              <!-- Overlaid Rotating Circular Stamp Badge -->
+              <div class="rotating-stamp-badge" aria-hidden="true">
+                <svg class="stamp-circular-text" viewBox="0 0 160 160">
+                  <path id="stamp-circle" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
+                  <text>
+                    <textPath href="#stamp-circle" startOffset="0%">
+                      roshani enterprises • tested for coastal goa •
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="stamp-center-arrow">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
                 </div>
-                <span class="project-label">Mormugao freight hardstand</span>
               </div>
 
-              <div class="project-preview">
-                <div class="project-thumbnail" data-slot="project-headquarters" data-alt="Industrial precast boundary wall enclosure in South Goa">
-                  <img src="./assets/project-headquarters.jpg" alt="Industrial precast boundary wall enclosure in South Goa">
-                </div>
-                <span class="project-label">Verna industrial perimeter</span>
+              <!-- Floating Pill Badge (Bottom Right of Image) -->
+              <div class="hero-floating-pill">
+                <span class="floating-pill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                  </svg>
+                </span>
+                <span class="floating-pill-text num">70+ new molds ready</span>
               </div>
-
             </div>
-          </article>
+          </div>
 
         </div>
+
       </div>
     </section>
 
-    <!-- Problem to Solution Section -->
-    <section class="problem-solution-section" aria-labelledby="comparison-heading">
+    <!-- SECTION 2: ABOUT US / TRUST IN EXCELLENCE (Pinterest 1:1) -->
+    <section id="about" class="about-section" aria-labelledby="about-heading">
       <div class="container">
-        <div class="section-header-block">
-          <h2 id="comparison-heading" class="section-title">Site poured masonry vs factory precast</h2>
-          <p class="section-subtitle">Monsoons degrade onsite mixed concrete.</p>
+        
+        <div class="about-header-block">
+          <h2 id="about-heading" class="about-main-title">
+            Trust in excellence, believe in home.<br>
+            Your enduring infrastructure awaits with Roshani Enterprises.
+          </h2>
         </div>
 
-        <div class="problem-solution-grid">
-          <div class="comparison-card comparison-negative">
-            <h3 class="comparison-title">Onsite poured masonry</h3>
-            <p class="comparison-text">
-              Monsoon humidity causes porosity and internal steel corrosion.
-            </p>
+        <!-- Two Column Content Grid -->
+        <div class="about-content-grid">
+          
+          <!-- Left Column: Tall Vertical Architecture Visual -->
+          <div class="about-visual-col">
+            <div class="about-image-card">
+              <img src="./assets/about-house.jpg" alt="Coastal Goa villa architecture with slate siding and precast concrete paved terrace" class="about-featured-img" width="896" height="1200">
+            </div>
           </div>
 
-          <div class="comparison-card comparison-positive">
-            <h3 class="comparison-title">Roshani factory precast</h3>
-            <p class="comparison-text">
-              Compacted M40 concrete halts chloride penetration and eliminates delays.
+          <!-- Right Column: 3 Stat Counters, Narrative & CTA Pill -->
+          <div class="about-info-col">
+            <div class="about-stats-row">
+              <div class="stat-item">
+                <span class="stat-number num">35K+</span>
+                <span class="stat-label">sqm paved</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number num">40K+</span>
+                <span class="stat-label">units ready</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number num">10K+</span>
+                <span class="stat-label">meters sold</span>
+              </div>
+            </div>
+
+            <p class="about-narrative-text">
+              At Roshani Enterprises, we are your dedicated manufacturing partner in coastal infrastructure. Established in 2014 in Sancoale, South Goa by founder Arif Khan, our precision precast plant produces IS-certified concrete products formulated to resist high chloride exposure, sea salinity, and torrential monsoon deluges.
             </p>
+
+            <div class="about-cta-wrapper">
+              <a href="#products" class="btn btn-pill-about">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Start inquiring today</span>
+              </a>
+            </div>
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Mandatory B11 Tagline Reveal Section -->
-    <section class="tagline-reveal-section" aria-labelledby="tagline-title">
+    <!-- SECTION 3: DIRECT INQUIRY / CONSULTATION CARD (Pinterest 1:1) -->
+    <section id="inquiry" class="inquiry-section" aria-labelledby="inquiry-heading">
+      <div class="container">
+        
+        <div class="direct-inquiry-card">
+          
+          <!-- Left Content -->
+          <div class="inquiry-card-content">
+            <h3 id="inquiry-heading" class="inquiry-heading">
+              Your coastal project demands strength.<br>
+              Chat with our precast specialists for free guidance today.
+            </h3>
+
+            <p class="inquiry-description">
+              Here at Roshani Enterprises, we stand as your unwavering manufacturing partner in Goa. Trust our seasoned engineering team to calculate load capacities, suggest optimal paver thickness (60mm to 100mm), and provide tailored factory-direct quotes for your site.
+            </p>
+
+            <div class="inquiry-action-wrapper">
+              <button type="button" class="btn btn-primary" id="inquiry-cta-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                <span>Contact us today</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Cutout: Professional Consultant holding model -->
+          <div class="inquiry-card-visual">
+            <div class="consultant-image-container">
+              <img src="./assets/consultant.png" alt="Arif Khan, Roshani Enterprises civil engineering consultant holding architectural model" class="consultant-cutout-img" width="1024" height="1024">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: EXPLORE PRECAST PRODUCTS (Pinterest 1:1 - 3 Cards) -->
+    <section id="products" class="products-showcase-section" aria-labelledby="showcase-heading">
+      <div class="container">
+        
+        <!-- Showcase Header -->
+        <div class="showcase-header-row">
+          <div class="showcase-header-copy">
+            <h2 id="showcase-heading" class="showcase-title">
+              Roshani Enterprises where quality meets coastal durability.<br>
+              Explore products crafted for everyone, everywhere.
+            </h2>
+            <p class="showcase-subtitle">
+              At Roshani Enterprises, we believe in the structural integrity of your vision. Our heavy-duty precast concrete products withstand corrosive coastal salinity and heavy industrial axle loads. Gain access to factory-direct inventory and reliable delivery across North and South Goa.
+            </p>
+          </div>
+          <div class="showcase-header-action">
+            <button type="button" class="btn btn-pill-showcase" id="showcase-contact-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Contact us today</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Feature Cards Grid (1 Dark Active Card + 2 Light Cards) -->
+        <div class="showcase-cards-grid">
+          
+          <!-- Card 1: ACTIVE DARK CARD (1:1 Replica of Harmony Haven) -->
+          <article class="product-card product-card-dark" aria-labelledby="card1-title">
+            <div class="card-dark-top-row">
+              <span class="pill-chip pill-chip-new">New</span>
+              <button type="button" class="pill-chip pill-chip-contact" onclick="openContactModal('Interlocking Paver Blocks')">Contact us</button>
+              <button type="button" class="circle-arrow-btn card-arrow-btn" aria-label="View Interlocking Paver details" onclick="openDrawer('pavers')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <h3 id="card1-title" class="card-dark-heading">Harmony Haven Pavers</h3>
+
+            <!-- Details Specification Box (Pinterest 1:1) -->
+            <div class="card-specs-box">
+              <div class="spec-line"><span class="spec-label">Location :</span> <span class="spec-val">Sancoale yard, South Goa</span></div>
+              <div class="spec-line"><span class="spec-label">Thickness :</span> <span class="spec-val">60mm, 80mm &amp; 100mm | M40</span></div>
+              <div class="spec-line"><span class="spec-label">Patterns :</span> <span class="spec-val">Milano, Fan Blade, I-Shape, Cosmic</span></div>
+            </div>
+
+            <p class="card-dark-description">
+              Hydraulically compacted interlocking pavers engineered for container freight yards, luxury villa driveways, and municipal promenades across Goa. High abrasion resistance and anti-skid surface.
+            </p>
+          </article>
+
+          <!-- Card 2: LIGHT CARD (Precast Boundary Walls) -->
+          <article class="product-card product-card-light" aria-labelledby="card2-title">
+            <div class="card-light-media">
+              <img src="./assets/product-walls.jpg" alt="Precast reinforced concrete boundary wall installation in Goa" class="card-media-img" width="800" height="533">
+              <button type="button" class="circle-arrow-btn media-floating-arrow" aria-label="View boundary walls details" onclick="openDrawer('walls')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-light-bottom-bar">
+              <h3 id="card2-title" class="card-light-title">Blissful boundary walls</h3>
+              <button type="button" class="btn btn-pill-view-more" onclick="openDrawer('walls')">View more</button>
+            </div>
+          </article>
+
+          <!-- Card 3: LIGHT CARD (Heavy Duty RCC Manholes) -->
+          <article class="product-card product-card-light" aria-labelledby="card3-title">
+            <div class="card-light-media">
+              <img src="./assets/product-drainage.jpg" alt="Heavy duty RCC manhole covers and stormwater drainage civil infrastructure" class="card-media-img" width="800" height="533">
+              <button type="button" class="circle-arrow-btn media-floating-arrow" aria-label="View manhole covers details" onclick="openDrawer('manholes')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-light-bottom-bar">
+              <h3 id="card3-title" class="card-light-title">Tranquil drainage covers</h3>
+              <button type="button" class="btn btn-pill-view-more" onclick="openDrawer('manholes')">View more</button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MANDATORY B11 TAGLINE REVEAL SECTION -->
+    <section class="tagline-reveal-section" aria-labelledby="tagline-heading">
       <div class="container tagline-container">
-        <h2 id="tagline-title" class="tagline-lead">Manufacturing standard</h2>
-        <p class="tagline-statement" aria-label="Precast concrete engineered for coastal Goa. Built to endure fifty monsoons without cracking.">
+        <h2 id="tagline-heading" class="tagline-statement" aria-label="Precast concrete engineered for coastal Goa. Built to endure fifty monsoons without cracking.">
           <span class="reveal-word">Precast</span>
           <span class="reveal-word">concrete</span>
           <span class="reveal-word">engineered</span>
@@ -259,251 +406,30 @@
           <span class="reveal-word">monsoons</span>
           <span class="reveal-word">without</span>
           <span class="reveal-word">cracking.</span>
-        </p>
+        </h2>
       </div>
     </section>
 
-    <!-- Core Benefits Section -->
-    <section id="benefits" class="benefits-section" aria-labelledby="benefits-heading">
+    <!-- SECTION 5: SUBSCRIBE TO NEWSLETTER / BULLETINS (Pinterest 1:1 Skyline Banner) -->
+    <section id="newsletter" class="newsletter-banner-section" aria-labelledby="newsletter-heading">
       <div class="container">
-        <div class="section-header-block">
-          <h2 id="benefits-heading" class="section-title">Engineered site advantages</h2>
-          <p class="section-subtitle">Eliminating delays and masonry labour.</p>
-        </div>
-
-        <div class="benefits-grid">
-
-          <article class="benefit-card">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <h3 class="benefit-title">Zero monsoon erosion</h3>
-            <p class="benefit-text">
-              Dense matrices prevent salt crystallization.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <h3 class="benefit-title">Accelerated handover</h3>
-            <p class="benefit-text">
-              Pre-cured panels assemble immediately.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="3" width="15" height="13"/>
-                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                <circle cx="5.5" cy="18.5" r="2.5"/>
-                <circle cx="18.5" cy="18.5" r="2.5"/>
-              </svg>
-            </div>
-            <h3 class="benefit-title">Heavy axle certified</h3>
-            <p class="benefit-text">
-              Pavers withstand 40-tonne container axles.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <h3 class="benefit-title">Direct yard pricing</h3>
-            <p class="benefit-text">
-              Direct factory dispatch removes markups.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Product Solutions Section -->
-    <section id="products" class="products-section" aria-labelledby="products-heading">
-      <div class="container">
-        <div class="section-header-block">
-          <h2 id="products-heading" class="section-title">Core precast systems</h2>
-          <p class="section-subtitle">Conforming to IS 15658 and IS 12592.</p>
-        </div>
-
-        <div class="products-grid">
-
-          <article class="product-card">
-            <h3 class="product-card-title">Interlocking pavers</h3>
-            <p class="product-card-desc">Heavy blocks for container yards and stations.</p>
-            <ul class="product-spec-list">
-              <li class="product-spec-item"><span class="product-spec-bullet"></span>60mm, 80mm, 100mm thicknesses</li>
-              <li class="product-spec-item"><span class="product-spec-bullet"></span>Milano, Fan, I-Shape</li>
-            </ul>
-            <a href="#contact" class="btn btn-secondary product-spec-btn" data-category="pavers">Inquire specs</a>
-          </article>
-
-          <article class="product-card">
-            <h3 class="product-card-title">Precast compound walls</h3>
-            <p class="product-card-desc">Modular systems for perimeter security.</p>
-            <ul class="product-spec-list">
-              <li class="product-spec-item"><span class="product-spec-bullet"></span>Prestressed reinforced panels</li>
-              <li class="product-spec-item"><span class="product-spec-bullet"></span>Slotted column posts</li>
-            </ul>
-            <a href="#contact" class="btn btn-secondary product-spec-btn" data-category="walls">Inquire specs</a>
-          </article>
-
-          <article class="product-card">
-            <h3 class="product-card-title">RCC drainage & covers</h3>
-            <p class="product-card-desc">Municipal covers and trench slabs.</p>
-            <ul class="product-spec-list">
-              <li class="product-spec-item"><span class="product-spec-bullet"></span>HD 20T and EHD 35T ratings</li>
-              <li class="product-spec-item"><span class="product-spec-bullet"></span>Anti slip chequered surface</li>
-            </ul>
-            <a href="#contact" class="btn btn-secondary product-spec-btn" data-category="manholes">Inquire specs</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works (3 Steps) -->
-    <section id="process" class="steps-section" aria-labelledby="steps-heading">
-      <div class="container">
-        <div class="section-header-block">
-          <h2 id="steps-heading" class="section-title">Procurement workflow</h2>
-          <p class="section-subtitle">From drawings to unloading in three steps.</p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <span class="step-num num">01</span>
-            <h3 class="step-title">Submit drawing</h3>
-            <p class="step-desc">Share boundary length or square footage.</p>
+        
+        <div class="newsletter-banner">
+          <div class="newsletter-backdrop">
+            <img src="./assets/newsletter-skyline.jpg" alt="Low angle view of architectural buildings under sky with birds in flight" class="newsletter-bg-img" width="1400" height="933">
+            <div class="newsletter-scrim"></div>
           </div>
 
-          <div class="step-card">
-            <span class="step-num num">02</span>
-            <h3 class="step-title">Itemized quote</h3>
-            <p class="step-desc">Receive material grades and trade rates.</p>
+          <div class="newsletter-content">
+            <h2 id="newsletter-heading" class="newsletter-title">Subscribe to our newsletter</h2>
+            
+            <form class="newsletter-form-pill" id="newsletter-form" novalidate>
+              <label for="newsletter-email" class="visually-hidden">Your email</label>
+              <input type="email" id="newsletter-email" name="email" class="newsletter-input" placeholder="Your email" required autocomplete="email">
+              <button type="submit" class="btn btn-pill-subscribe">Subscribe</button>
+            </form>
+            <p class="form-feedback" id="newsletter-feedback" aria-live="polite" hidden></p>
           </div>
-
-          <div class="step-card">
-            <span class="step-num num">03</span>
-            <h3 class="step-title">Site delivery</h3>
-            <p class="step-desc">Components unloaded on site.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical FAQ Section -->
-    <section id="faq" class="faq-section" aria-labelledby="faq-heading">
-      <div class="container">
-        <div class="section-header-block" style="text-align: center; margin-inline: auto;">
-          <h2 id="faq-heading" class="section-title">Frequently asked questions</h2>
-          <p class="section-subtitle">Engineering specifications for Goa projects.</p>
-        </div>
-
-        <div class="faq-list">
-
-          <details class="faq-item">
-            <summary class="faq-summary">
-              <span>What concrete grades do you cast?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="faq-panel">
-              M30 to M50 sulphate resistant mixes.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-summary">
-              <span>How fast are boundary walls installed?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="faq-panel">
-              Up to 150 running feet daily.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-summary">
-              <span>Are pavers heavy vehicle certified?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="faq-panel">
-              Blocks exceed 45 MPa (IS 15658).
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-summary">
-              <span>Do you deliver across Goa?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="faq-panel">
-              Daily fleet dispatch across Goa.
-            </div>
-          </details>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Estimate & Inquiry Section -->
-    <section id="contact" class="inquiry-section" aria-labelledby="inquiry-heading">
-      <div class="container inquiry-grid">
-
-        <div class="inquiry-info">
-          <h2 id="inquiry-heading" class="section-title">Request factory quote</h2>
-          <p class="hero-tagline">Direct rates and batch certifications from Sancoale.</p>
-          <div class="hero-proof-line">
-            Sancoale, Goa.
-          </div>
-        </div>
-
-        <div class="inquiry-card">
-          <form id="quote-form" action="#" method="POST" novalidate>
-            <div class="form-group">
-              <label for="calc-type" class="form-label">Product category</label>
-              <select id="calc-type" class="form-select" required>
-                <option value="pavers">Interlocking pavers (per sq ft)</option>
-                <option value="walls">Precast compound walls (per running ft)</option>
-                <option value="manholes">RCC manhole covers and frames</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="calc-area" class="form-label">Quantity (sq ft or running ft)</label>
-              <input type="number" id="calc-area" class="form-input" min="50" max="500000" value="2500" required>
-            </div>
-
-            <div class="calculator-result" aria-live="polite">
-              <span class="result-label">Preliminary estimate:</span>
-              <span id="calc-output" class="result-value num">₹1,37,500</span>
-            </div>
-
-            <div class="form-group form-group-spaced">
-              <label for="contact-name" class="form-label">Contact name</label>
-              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Goa Coastal Infrastructure Ltd" required>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-phone" class="form-label">Phone number</label>
-              <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary form-submit-btn" id="quote-submit-btn">Submit quotation request</button>
-            <div id="quote-feedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
-          </form>
         </div>
 
       </div>
@@ -511,87 +437,173 @@
 
   </main>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
+  <!-- SECTION 6: FOOTER (Pinterest 1:1 Replica) -->
+  <footer class="site-footer" aria-labelledby="footer-lead-heading">
+    <div class="container footer-container">
+      
+      <!-- Left Column: Search Bar & Social Links -->
+      <div class="footer-left-col">
+        <h3 id="footer-lead-heading" class="footer-lead-heading">
+          Looking to buy, sell or invest in real estate?
+        </h3>
 
-        <div class="footer-brand">
-          <span class="footer-brand-title">Roshani Enterprises</span>
-          <p class="footer-brand-desc">
-            Goa manufacturer of precast concrete and pavers.
-          </p>
-          <p class="footer-brand-contact">
-            <a href="tel:+919876543210" class="footer-link">Direct dispatch: +91 98765 43210</a>
-          </p>
-        </div>
+        <!-- Search Bar Pill -->
+        <form class="footer-search-pill" id="footer-search-form" role="search">
+          <label for="footer-search-input" class="visually-hidden">Find your precast requirement here</label>
+          <input type="text" id="footer-search-input" class="footer-search-input" placeholder="Find your dream house here">
+          <button type="submit" class="circle-arrow-btn footer-search-btn" aria-label="Submit search requirement">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
 
-        <div class="footer-nav-col">
-          <span class="footer-col-heading">Navigation</span>
-          <ul class="footer-link-list">
-            <li><a href="#hero" class="footer-link">Home</a></li>
-            <li><a href="#expertise" class="footer-link">About facility</a></li>
-            <li><a href="#benefits" class="footer-link">Benefits</a></li>
-            <li><a href="#products" class="footer-link">Products</a></li>
-            <li><a href="#process" class="footer-link">Process</a></li>
-            <li><a href="#faq" class="footer-link">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-nav-col">
-          <span class="footer-col-heading">Products</span>
-          <ul class="footer-link-list">
-            <li><a href="#products" class="footer-link">Paver blocks</a></li>
-            <li><a href="#products" class="footer-link">Precast walls</a></li>
-            <li><a href="#products" class="footer-link">RCC manholes</a></li>
-            <li><a href="#products" class="footer-link">Parking tiles</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-nav-col">
-          <span class="footer-col-heading">Facility</span>
-          <p class="footer-brand-desc">
-            Sancoale Industrial Estate, Chicalim, South Goa 403711.
-          </p>
-          <ul class="footer-link-list" style="margin-top: var(--spacing-75);">
-            <li><button type="button" class="footer-text-btn" id="open-terms-btn">Terms & Specifications</button></li>
-            <li><button type="button" class="footer-text-btn" id="open-privacy-btn">Privacy notice</button></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-credits" data-credits>
-          Photographs: Wikimedia Commons architectural archives.
-        </div>
-        <div>
-          © 2026 Roshani Enterprises. Sancoale, Goa. IS 15658 & IS 12592.
+        <!-- Social Media Icon Row -->
+        <div class="footer-social-row">
+          <a href="https://facebook.com" class="social-icon-btn" aria-label="Visit Roshani Enterprises on Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+            </svg>
+          </a>
+          <a href="https://x.com" class="social-icon-btn" aria-label="Visit Roshani Enterprises on X" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com" class="social-icon-btn" aria-label="Visit Roshani Enterprises on Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com" class="social-icon-btn" aria-label="Visit Roshani Enterprises on YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/919822154321" class="social-icon-btn" aria-label="Chat with Roshani Enterprises on WhatsApp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+              <path d="M12.031 2a9.97 9.97 0 0 0-8.629 14.996L2 22l5.178-1.356A9.96 9.96 0 0 0 12.031 22C17.537 22 22 17.537 22 12.031S17.537 2 12.031 2zm0 18.25c-1.572 0-3.093-.418-4.428-1.21l-.317-.188-3.29.863.878-3.208-.207-.329A8.217 8.217 0 0 1 3.781 12.03c0-4.549 3.701-8.25 8.25-8.25 4.549 0 8.25 3.701 8.25 8.25 0 4.549-3.701 8.25-8.25 8.25zm4.526-6.177c-.248-.124-1.467-.724-1.694-.807-.228-.083-.394-.124-.56.124-.166.248-.642.807-.787.973-.145.166-.29.187-.538.062-.249-.124-1.049-.387-1.998-1.233-.739-.659-1.238-1.474-1.383-1.722-.145-.248-.015-.382.109-.506.111-.112.249-.29.373-.435.124-.145.166-.249.249-.415.083-.166.042-.311-.021-.435-.062-.124-.56-1.35-.767-1.848-.202-.486-.407-.42-.56-.428l-.477-.008c-.166 0-.435.062-.663.311-.228.249-.87 851-.87 2.075 0 1.224.891 2.407 1.016 2.573.124.166 1.752 2.675 4.244 3.751.593.256 1.056.409 1.417.524.596.189 1.138.162 1.567.098.479-.071 1.467-.6 1.674-1.18.207-.58.207-1.077.145-1.18-.062-.104-.228-.166-.477-.29z"/>
+            </svg>
+          </a>
         </div>
       </div>
+
+      <!-- Right Column: Navigation Links, Logo & Address -->
+      <div class="footer-right-col">
+        <nav class="footer-nav-row" aria-label="Footer quick navigation">
+          <a href="#about" class="footer-nav-link">About</a>
+          <a href="#products" class="footer-nav-link">Services</a>
+          <a href="#inquiry" class="footer-nav-link">Agents</a>
+          <a href="#inquiry" class="footer-nav-link">Contact us</a>
+        </nav>
+
+        <div class="footer-brand-block">
+          <div class="footer-brand-header">
+            <svg class="brand-symbol" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 2L2 9V23L16 30L30 23V9L16 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M16 2V30M2 9L30 23M30 9L2 23" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.6"/>
+            </svg>
+            <span class="brand-title">Roshani Enterprises</span>
+          </div>
+
+          <address class="footer-address">
+            Roshani Enterprises Precast Facility<br>
+            Plot / Survey No., Sancoale Industrial Area<br>
+            Near Zuarinagar &amp; Chicalim, South Goa 403726<br>
+            Goa, India
+          </address>
+        </div>
+      </div>
+
     </div>
   </footer>
 
-  <!-- Accessible Legal Modal Dialog (Landing Page Design B9, B10) -->
-  <dialog id="legal-dialog" class="legal-dialog" aria-labelledby="legal-dialog-title">
-    <div class="legal-dialog-card">
-      <div class="legal-dialog-header">
-        <h3 id="legal-dialog-title" class="legal-dialog-heading">Terms & Specifications</h3>
-        <button type="button" class="legal-close-btn" id="legal-close-btn" aria-label="Close dialog">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
+  <!-- INTERACTIVE MODAL: Video Tour Modal -->
+  <dialog id="video-modal" class="modal-dialog" aria-labelledby="video-modal-title">
+    <div class="modal-surface">
+      <div class="modal-header">
+        <h3 id="video-modal-title" class="modal-title">Roshani Enterprises Sancoale yard tour</h3>
+        <button type="button" class="modal-close-btn" id="video-modal-close" aria-label="Close video tour modal">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
       </div>
-      <div class="legal-dialog-body">
-        <h4>Commercial quotations</h4>
-        <p>Estimates are preliminary yard calculations. Orders are verified against load ratings and GST schedules.</p>
-        <h4>Manufacturing standards</h4>
-        <p>Cast in steel moulds with hydraulic vibration. Consignments include batch test certificates.</p>
+      <div class="modal-body video-modal-body">
+        <div class="video-preview-frame">
+          <img src="./assets/hero-villa.jpg" alt="Roshani Enterprises precast manufacturing and paving showcase" class="modal-video-poster">
+          <div class="video-overlay-badge">
+            <span class="pulse-indicator" aria-hidden="true"></span>
+            <span>Precast automation &amp; hydraulic compaction (M40 - M50)</span>
+          </div>
+        </div>
+        <p class="modal-caption">
+          Inside our Sancoale manufacturing yard: automated hydraulic vibration, steam curing kilns, and computerized batching delivering 10,000+ metric tonnes of certified coastal infrastructure annually.
+        </p>
       </div>
     </div>
   </dialog>
+
+  <!-- INTERACTIVE MODAL: Direct Quote Inquiry Form -->
+  <dialog id="quote-modal" class="modal-dialog" aria-labelledby="quote-modal-title">
+    <div class="modal-surface">
+      <div class="modal-header">
+        <h3 id="quote-modal-title" class="modal-title">Request factory direct quote</h3>
+        <button type="button" class="modal-close-btn" id="quote-modal-close" aria-label="Close quote modal">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <form class="quote-modal-form" id="quote-modal-form" novalidate>
+        <div class="form-group">
+          <label for="quote-name" class="form-label">Full name</label>
+          <input type="text" id="quote-name" name="name" class="form-input" placeholder="e.g. Rahul Naik" required>
+        </div>
+        <div class="form-group">
+          <label for="quote-phone" class="form-label">Phone number (Goa / India)</label>
+          <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="+91 98221 XXXXX" required>
+        </div>
+        <div class="form-group">
+          <label for="quote-product" class="form-label">Select precast product</label>
+          <select id="quote-product" name="product" class="form-input" required>
+            <option value="Interlocking Pavers">Interlocking paver blocks (60/80/100mm)</option>
+            <option value="Precast Boundary Walls">Precast boundary &amp; compound walls</option>
+            <option value="RCC Manhole Covers">Heavy duty RCC manhole covers &amp; drainage</option>
+            <option value="Designer Cement Jalis">Designer cement jalis &amp; window grills</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quote-qty" class="form-label">Approximate quantity or area</label>
+          <input type="text" id="quote-qty" name="quantity" class="form-input" placeholder="e.g. 500 sqm or 100 meters" required>
+        </div>
+        <button type="submit" class="btn btn-primary modal-submit-btn">Submit request</button>
+        <p class="form-feedback" id="quote-feedback" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- INTERACTIVE DRAWER: Product Specification Details -->
+  <aside id="product-drawer" class="product-drawer" aria-labelledby="drawer-title" aria-hidden="true" hidden>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3 id="drawer-title" class="drawer-title">Technical specifications</h3>
+        <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close specifications panel">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-body" id="drawer-content">
+        <!-- Injected via JavaScript based on selected product -->
+      </div>
+    </div>
+  </aside>
 
   <script src="./main.js"></script>
 </body>

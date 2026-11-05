@@ -40,6 +40,7 @@
   --text-4xl: 2.25rem;    /* 36px */
   --text-5xl: 3rem;       /* 48px */
   --text-6xl: 3.75rem;    /* 60px */
+  --text-7xl: 4.5rem;     /* 72px */
 
   --leading-none: 1;
   --leading-tight: 1.1;
@@ -47,23 +48,23 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.6;
 
-  /* Motion: Weighted Deceleration Base Curve (B7) */
+  /* Motion: Weighted Deceleration Base Curve (B7 & Silk-Design) */
   --ease-base: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-micro: 120ms;
-  --dur-hover: 300ms;
-  --dur-layout: 500ms;
+  --dur-hover: 250ms;
+  --dur-layout: 450ms;
   --dur-reveal: 700ms;
 
   --color-error: oklch(52% 0.19 27);
   --color-success: oklch(50% 0.12 150);
 
-  --container: 1360px;
-  --gutter: 48px;
-  --gap-columns: 24px;
-  --section-gap-s: 80px;
-  --section-gap: 96px;
-  --section-gap-l: 120px;
+  --container: 1280px;
+  --gutter: 40px;
+  --gap-columns: 32px;
+  --section-gap-s: 64px;
+  --section-gap: 88px;
+  --section-gap-l: 112px;
 
   --z-base: 1;
   --z-raised: 10;
@@ -74,61 +75,82 @@
   --z-toast: 500;
   --z-tooltip: 600;
 
-  /* Flat Dark Mode Surfaces (B4) mapped to OKLCH with minimum 0.005 chroma */
-  --color-paper: oklch(14% 0.006 240);          /* #121214 deep flat ground */
-  --color-paper-2: oklch(18% 0.012 245);        /* subtle navy-charcoal surface */
-  --color-paper-3: oklch(21% 0.015 245);        /* elevated card surface */
-  --color-paper-elevated: oklch(24% 0.06 250);  /* deep prussian navy center console */
-  --color-nav-bg: oklch(16% 0.006 240 / 0.85);
+  /* Overall Page Ground: Soft Coastal Sky Grey-Blue */
+  --color-page-bg: oklch(95.5% 0.012 235);
+  --color-page-bg-subtle: oklch(97% 0.008 235);
 
-  --color-paper-light: oklch(98% 0.005 240);
-  --color-paper-light-2: oklch(95% 0.008 240);
+  /* Deep Architectural Ink for Hero & Dark Cards */
+  --color-paper: oklch(14% 0.012 245);          /* Deep charcoal-slate ground */
+  --color-paper-2: oklch(18% 0.016 245);        /* Featured card surface */
+  --color-paper-3: oklch(22% 0.018 245);        /* Elevated dark surface */
+  --color-nav-bg: oklch(17% 0.014 245);         /* Solid dark nav */
 
-  /* Typography Inks */
-  --color-ink: oklch(99% 0.006 240);            /* #FFFFFF crisp text */
-  --color-ink-2: oklch(90% 0.012 240);
-  --color-muted: oklch(76% 0.018 240);          /* Muted body text */
-  --color-subtle: oklch(62% 0.015 240);         /* Deactivated words in reveal */
+  /* Neutral Card Surfaces (with minimum 0.006 chroma) */
+  --color-card-white: oklch(99% 0.006 240);
+  --color-card-light: oklch(97.5% 0.008 240);
+  --color-card-border: oklch(89% 0.012 235);
 
-  --color-ink-on-light: oklch(20% 0.03 240);
-  --color-ink-on-light-2: oklch(36% 0.02 240);
-  --color-muted-on-light: oklch(52% 0.02 240);
+  /* Primary Typography Inks */
+  --color-ink: oklch(16% 0.02 240);             /* Primary dark body text on light ground */
+  --color-ink-2: oklch(28% 0.02 240);           /* Secondary dark text */
+  --color-muted-on-light: oklch(48% 0.018 240); /* Muted slate text on light ground */
 
-  /* Hairlines and Borders (B4: full borders only) */
+  /* Inks for Dark Zones (Hero, Dark Cards, Modals) */
+  --color-paper-ink: oklch(99% 0.006 240);      /* Crisp white text for dark zones */
+  --color-paper-ink-2: oklch(88% 0.012 240);    /* Secondary white text */
+  --color-muted: oklch(74% 0.018 240);          /* Muted body text on dark */
+  --color-subtle: oklch(58% 0.015 240);         /* Subtle text / deactivated reveal */
+
+  --color-ink-on-light: var(--color-ink);
+  --color-ink-on-light-2: var(--color-ink-2);
+
+  /* Hairlines and Borders */
   --color-rule: oklch(95% 0.01 240 / 0.12);
-  --color-rule-2: oklch(95% 0.01 240 / 0.24);
-  --color-rule-light: oklch(20% 0.04 250 / 0.12);
+  --color-rule-2: oklch(95% 0.01 240 / 0.22);
+  --color-rule-light: oklch(20% 0.02 240 / 0.10);
 
-  /* Accent & Action (B1 text styles: Button-md) */
-  --color-accent: oklch(48% 0.22 250);          /* Vibrant cobalt with 4.5:1+ contrast against white text */
-  --color-accent-hover: oklch(54% 0.23 250);
+  /* Slate-Teal Accent & Action Buttons */
+  --color-accent: oklch(34% 0.025 240);         /* Slate architectural button */
+  --color-accent-hover: oklch(40% 0.03 240);
   --color-accent-ink: oklch(99% 0.006 240);
-  --color-focus: oklch(72% 0.19 250);
+  --color-focus: oklch(65% 0.18 250);
 
-  /* Hero Heading Left-to-Right Text Gradient (B5) */
-  --hero-gradient-start: oklch(99% 0.006 240);  /* #FFFFFF */
-  --hero-gradient-end: oklch(68% 0.010 240);    /* #9B9B9B */
+  /* Button Light Tokens */
+  --color-btn-light-bg: oklch(92% 0.01 235);
+  --color-btn-light-hover: oklch(86% 0.015 235);
+  --color-btn-light-ink: oklch(20% 0.02 240);
 
-  --hero-scrim-top: oklch(14% 0.006 240 / 0.88);
-  --hero-scrim-mid: oklch(14% 0.006 240 / 0.72);
-  --hero-scrim-bottom: oklch(14% 0.006 240 / 0.98);
-  --shadow-media: 0 16px 36px oklch(10% 0.02 240 / 0.18);
+  /* Dark Surface Elements */
+  --color-stamp-bg: oklch(16% 0.014 245);
+  --color-hero-pill-bg: oklch(16% 0.014 245);
+  --color-specs-box-bg: oklch(15% 0.014 245);
+  --color-arrow-float-bg: oklch(16% 0.014 245);
+  --color-scrim-top: oklch(14% 0.012 245 / 0.70);
+  --color-scrim-bottom: oklch(14% 0.012 245 / 0.92);
+  --color-dialog-backdrop: oklch(14% 0.012 245 / 0.75);
+  --color-overlay-badge-bg: oklch(16% 0.014 245);
+  --color-drawer-backdrop: oklch(14% 0.012 245 / 0.65);
+  --color-mobile-backdrop: oklch(14% 0.012 245 / 0.75);
+
+  /* Shadows */
+  --shadow-card: 0 12px 32px oklch(20% 0.02 240 / 0.06);
+  --shadow-card-elevated: 0 20px 48px oklch(20% 0.02 240 / 0.09);
+  --shadow-hero-badge: 0 8px 24px oklch(10% 0.02 240 / 0.35);
 
   /* Approved Single Typeface: Manrope (B1) */
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-outlier: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-  /* Nested Corner Radius Formula (B3: inner = outer - gap) */
-  --radius-card: 16px;                          /* Outer shape radius */
-  --card-padding: 24px;                         /* Gap / padding */
-  --radius-inner: 8px;                          /* Inner shape radius: 16 - 8 = 8px */
-  --radius-sm: 4px;
-  --radius-pill: 999px;
+  /* Radii */
+  --radius-hero: 44px;
+  --radius-card-lg: 32px;
+  --radius-card: 24px;
+  --radius-inner: 16px;
+  --radius-sm: 8px;
+  --radius-pill: 9999px;
+  --radius-circle: 50%;
 
   --rule-hair: 1px;
   --rule-thick: 2px;
-  --shadow-card: 0 16px 32px oklch(10% 0.02 240 / 0.25);
-  --shadow-dock: 0 24px 48px oklch(10% 0.02 240 / 0.35);
-  --tracking-display: -0.02em;
+  --tracking-display: -0.015em;
 }
